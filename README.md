@@ -8,3 +8,11 @@ Branch Orgs are the place you perform feature development.  These orgs allow you
 # How do I setup my Branch Org?
 Read this, it should help.<br />
 <a href="https://dealerteam-prod.mindtouch.us/Internal_Procedures/Feature_Lifecycle/Development/Branch_Org_-_Feature_Branch" target="_blank">Branch Orgs and Feature Development</a>
+
+# Cool, let's populate some Metadata!
+If you are ready to prepare your org with a copy of the dealer.master_branch follow these instructions. <br /><br />
+First, you will need to have the Force.com Migration Tool (And subsequently ANT) Installed.<br />
+Follow these instructions to get it done.<br />
+<a href="https://developer.salesforce.com/docs/atlas.en-us.200.0.daas.meta/daas/forcemigrationtool_install.htm" target="_blank">Force.com Migration Toolkit - Installation Instructions</><br />
+Do yourself a favor and follow the pre-requsites and install ANT.
+<hr />

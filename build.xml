@@ -1,0 +1,38 @@
+<project name="Retrieve, Build and deploy Code from the DealerTeam managed codebase."  basedir="." xmlns:sf="antlib:com.salesforce">
+
+    <property file="build.properties"/>
+    <property environment="env"/>
+
+    <condition property="sf.username" value=""> <not> <isset property="sf.username"/> </not> </condition>
+    <condition property="sf.password" value=""> <not> <isset property="sf.password"/> </not> </condition>
+    <condition property="sf.sessionId" value=""> <not> <isset property="sf.sessionId"/> </not> </condition>
+
+    <condition property="dt.username" value=""> <not> <isset property="dt.username"/> </not> </condition>
+    <condition property="dt.password" value=""> <not> <isset property="dt.password"/> </not> </condition>
+    <condition property="dt.sessionId" value=""> <not> <isset property="dt.sessionId"/> </not> </condition>    
+
+    <taskdef resource="com/salesforce/antlib.xml" uri="antlib:com.salesforce">
+        <classpath>
+            <pathelement location="./ant-salesforce.jar" />          
+        </classpath>
+    </taskdef>
+
+    <!-- Dealerteam build targets -->
+    <target name="retrievePkg">
+      <sf:retrieve username="${dt.username}" password="${dt.password}" serverurl="${dt.serverurl}" maxPoll="${dt.maxPoll}" retrieveTarget="metadata" packageNames="${dt.pkgName}"/>
+    </target>
+    <target name="deployCode">
+      <replace dir="./metadata/workflows" token="&lt;integrationUser&gt;jarrett@dealerteam.com&lt;/integrationUser&gt;" value="&lt;integrationUser>${sf.username}&lt;/integrationUser&gt;" />
+	    <sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="metadata" />
+    </target>    
+
+    <target name="test">
+      <!-- Upload the contents of the "mypkg" package -->
+      <sf:deploy username="${sf.username}" password="${sf.password}" sessionId="${sf.sessionId}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="metadata_test" rollbackOnError="true"/>
+      <mkdir dir="metadata_test"/>
+      <!-- Retrieve the contents into another directory -->
+      <sf:retrieve username="${sf.username}" password="${sf.password}" sessionId="${sf.sessionId}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" retrieveTarget="metadata_test" packageNames="${dt.pkgName}"/>
+    </target>    
+    <!-- End DealerTeam Build Targets -->
+
+</project>

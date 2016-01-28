@@ -4,3 +4,7 @@ Branch Orgs are the place you perform feature development.  These orgs allow you
 1) By default they are empty (No metadata yo)<br />
 2) You can modify stuff that the managed codebase may not actually allow<br/>
 3) It's a great scratchpad.  If you break something, only you will notice.<br/>
+
+# How do I setup my Branch Org?
+Read this, it should help.<br />
+<a href="https://dealerteam-prod.mindtouch.us/Internal_Procedures/Feature_Lifecycle/Development/Branch_Org_-_Feature_Branch" target="_blank">Branch Orgs and Feature Development</a>

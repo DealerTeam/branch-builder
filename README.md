@@ -38,7 +38,12 @@ Once you have these settings in place it is time to apply your Branch Org User/P
 <h3>Retrieve The Packaged Metdata</h3>
 Now that your ANT Scripts can authenticate, let's retreive the metadata.<br />
 Execute the following command <code>ant retrievePkg</code><br />
-
+This will begin the process of downloading a current copy of the package metadata to your local metadata folder.
+<br />
+<br />
+<h3>You still need to apply the metadata to your Branch</h3>
+Execute <code>ant deployCode</code> to send the metadata up to the Branch Org.<br />
+<b>This should take about 10 minutes to run, be patient</b>
 
 
 

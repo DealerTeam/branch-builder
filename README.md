@@ -13,6 +13,24 @@ Read this, it should help.<br />
 If you are ready to prepare your org with a copy of the dealer.master_branch follow these instructions. <br /><br />
 First, you will need to have the Force.com Migration Tool (And subsequently ANT) Installed.<br />
 Follow these instructions to get it done.<br />
-<a href="https://developer.salesforce.com/docs/atlas.en-us.200.0.daas.meta/daas/forcemigrationtool_install.htm" target="_blank">Force.com Migration Toolkit - Installation Instructions</><br />
+<a href="https://developer.salesforce.com/docs/atlas.en-us.200.0.daas.meta/daas/forcemigrationtool_install.htm" target="_blank">Force.com Migration Toolkit - Installation Instructions<br />
 Do yourself a favor and follow the pre-requsites and install ANT.
 <hr />
+
+# To populate the metadata
+After you clone this repo onto your machine, some settings will need to be applied to make this work.<br />
+Open the build.properties file. <br /><br />
+<h3>Change the follwing settings</h3>
+<ul>
+  <li>dt.username = <username> Set your username for the primary managed package here</li>
+  <li>dt.password = <password|sectoken> Set your password and sectoken here</li>
+</ul>
+These auth controls are for copying the source code from the primary packaging org (PPO).
+<br />
+<br />
+Once you have these settings in place it is time to apply your Branch Org User/Pass.
+<br />
+<ul>
+  <li>sf.username = <username> Set your username for your Branch Org Here</li>
+  <li>sf.password = <password|sectoken> Set your password and sectoken here</li>
+</ul>

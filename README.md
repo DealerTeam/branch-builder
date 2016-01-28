@@ -34,3 +34,12 @@ Once you have these settings in place it is time to apply your Branch Org User/P
   <li>sf.username = <username> Set your username for your Branch Org Here</li>
   <li>sf.password = <password|sectoken> Set your password and sectoken here</li>
 </ul>
+<br />
+<h3>Retrieve The Packaged Metdata</h3>
+Now that your ANT Scripts can authenticate, let's retreive the metadata.<br />
+Execute the following command <code>ant retrievePkg</code><br />
+
+
+
+
+

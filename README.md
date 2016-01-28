@@ -20,6 +20,7 @@ Do yourself a favor and follow the pre-requsites and install ANT.
 # To populate the metadata
 After you clone this repo onto your machine, some settings will need to be applied to make this work.<br />
 Open the build.properties file. <br /><br />
+<h5>Don't forget to copy the ant-saleforce.jar to the build-branch folder</h5>
 <h3>Change the follwing settings</h3>
 <ul>
   <li>dt.username = <username> Set your username for the primary managed package here</li>
@@ -45,6 +46,8 @@ This will begin the process of downloading a current copy of the package metadat
 Execute <code>ant deployCode</code> to send the metadata up to the Branch Org.<br />
 <b>This should take about 10 minutes to run, be patient</b>
 
+<br />
+That should be all.  The metadata upload should build a working environment for you.
 
 
 
